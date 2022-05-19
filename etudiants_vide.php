@@ -14,6 +14,14 @@
 
     function addEtudiant() {
         global $conn;
+        $etudiant = json_decode(file_get_contents("php://input"));
+        foreach($etudiant as $key => $value) {
+            // echo $key." ".$value."\n";
+            switch($key) {
+                case "nom" : $nom = $value;         break;
+                case "prenom" : $prenom = $value;   break;
+                case "code" : $code = $value;  break;
+            }
     }
 
     function updateEtudiant($id) {
